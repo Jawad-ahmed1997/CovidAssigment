@@ -1,6 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router';
 
 function SearchResult() {
+    const found = useParams();
+    console.log(found)
     return (
         <div>
            <h1>Find</h1> 
@@ -8,4 +11,4 @@ function SearchResult() {
     )
 }
 
-export default SearchResult
+export default SearchResult;

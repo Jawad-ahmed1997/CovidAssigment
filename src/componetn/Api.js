@@ -2,13 +2,15 @@ import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { useNavigate } from "react-router";
 
 function Api() {
     const [dt, setdt] = useState([])
-
-
+    const navigate=useNavigate();
+    
     const findbyfilterdata=(st)=>{
-       let found =dt.filter(e=>(e.state==st))
+        navigate('/SearchResult/:found');
+        let found =dt.filter(e=>(e.state==st))
         console.log(found)
     }
 

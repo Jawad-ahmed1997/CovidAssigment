@@ -5,7 +5,6 @@ import React from 'react'
 // import Home from './componetn/home'
 // import Contact from './componetn/contact';
 // import {Link} from 'react-router-dom';
-import Api from './componetn/Api';
 import RoutePractice from './config/route';
 const App=()=>{
   return (
