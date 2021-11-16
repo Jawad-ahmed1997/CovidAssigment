@@ -9,11 +9,14 @@ const RoutePractice=()=>{
             <Router>
                 <Link to='/Api'>Api</Link>
                 <Link to='/SearchResult'>SearchReslut</Link>
+                <h1>DashBord</h1>
                 <Routes>
                     <Route > <Api path="/Api" /> </Route>
                     <Route > <SearchResult path="/SearchResult"/></Route>
                 </Routes>
             </Router>
+
+
         </div>
     )
 }

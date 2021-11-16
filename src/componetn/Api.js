@@ -6,11 +6,11 @@ import { useNavigate } from "react-router";
 
 function Api() {
     const [dt, setdt] = useState([])
-    const navigate=useNavigate();
+    const navigate=useNavigate({});
     
     const findbyfilterdata=(st)=>{
-        navigate('/SearchResult/:found');
-        let found =dt.filter(e=>(e.state==st))
+        let found =dt.filter(e=>(e.state===st))
+        navigate('/SearchResult',{state:found});
         console.log(found)
     }
 
@@ -22,7 +22,6 @@ function Api() {
             console.log(e.data)
             setdt(e.data);
         })
-        console.log(dt)
     }
     useEffect(() => {
         getData();
