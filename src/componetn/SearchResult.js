@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {useLocation} from 'react-router';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import active from '../images/activecases.png'
+import dignose from '../images/diagnosed-cases.png'
+import deaths from '../images/deaths.png'
+import recover from '../images/recovered.png'
+
 
 
 function SearchResult() {
@@ -12,31 +18,51 @@ function SearchResult() {
 
     return (
         <div>
-            <table className="table shadow table-bordered">
-                <thead className="table-active">
-                <tr>
-                    <th>State</th>
-                    <th>Positive</th>
-                    <th>Negative</th>
-                    <th>Recovered</th>
-                    <th>Detath</th>
-                </tr>
-                </thead>
-                <tbody>
+            <div>
                 {geted.map((e,i)=>(
-                <tr>
-                
-                    <td >{e.state}</td>
-                    <td >{e.positive}</td>
-                    <td >{e.negative}</td>
-                    <td >{e.recovered}</td>
-                    <td >{e.death}</td>
-                </tr>
+                    <>
+                    <div className=" w-100 d-flex justify-content-around align-items-center flex-row">
+                    <div className="d-flex justify-content-center align-item-center flex-column w-23 border">
+                        <div className=" d-flex justify-content-center align-items-center flex-row">
+                            <h5>Conformed Cases</h5>
+                            <img src={dignose}/>
+                        </div>
+                        <div className=" d-flex justify-content-center align-items-center">
+                            <h1>{e.totalTestResults}</h1>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center align-item-center flex-column w-23 border">
+                        <div className=" d-flex justify-content-center align-items-center flex-row">
+                            <h5>Total Deaths</h5>
+                            <img src={deaths}/>
+                        </div>
+                        <div className=" d-flex justify-content-center align-items-center">
+                            <h1>{e.death}</h1>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center align-item-center flex-column w-23 border">
+                        <div className=" d-flex justify-content-center align-items-center flex-row">
+                            <h5>Recovered</h5>
+                            <img src={recover}/>
+                        </div>
+                        <div className=" d-flex justify-content-center align-items-center">
+                            <h1>{e.recovered}</h1>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center align-item-center flex-column w-23 border">
+                        <div className=" d-flex justify-content-center align-items-center flex-row">
+                            <h5>Active cases</h5>
+                            <img src={active}/>
+                        </div>
+                        <div className=" d-flex justify-content-center align-items-center">
+                            <h1>{e.positive}</h1>
+                        </div>
+                    </div>
+                    </div>
+                    </>
                 ))}
-                </tbody>
-            </table>
-         
-        </div>
+                </div>
+         </div>
     )
 }
 
