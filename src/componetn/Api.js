@@ -2,6 +2,11 @@ import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import active from '../images/activecases.png'
+import dignose from '../images/diagnosed-cases.png'
+import deaths from '../images/deaths.png'
+import recover from '../images/recovered.png'
+import '../App.css'
 import { useNavigate } from "react-router";
 
 function Api() {
@@ -40,29 +45,57 @@ function Api() {
                 }
             </select></div>
             <div className="w-100">
-            <table className="table shadow table-bordered">
-                <thead className="table-active">
-                <tr>
-                    <th>State</th>
-                    <th>Positive</th>
-                    <th>Negative</th>
-                    <th>Recovered</th>
-                    <th>Detath</th>
-                </tr>
-                </thead>
-                <tbody>
                 {dt.map((e,i)=>(
-                <tr>
-                
-                    <td >{e.state}</td>
-                    <td >{e.positive}</td>
-                    <td >{e.negative}</td>
-                    <td >{e.recovered}</td>
-                    <td >{e.death}</td>
-                </tr>
+                    <>
+               <div className=" w-100 mt-3 mb-3 d-flex justify-content-around align-items-center flex-row">
+               <div className="d-flex justify-content-center align-items-center flex-column">
+               <h1>
+                   {e.state}
+                </h1>
+                <div className="w-100 d-flex justify-content-around align-items-center flex-row">
+               <div className="div_h Conformed d-flex justify-content-center align-item-center flex-column  border">
+                   <div className=" d-flex justify-content-center align-items-center flex-row">
+                       <h5>Conformed Cases</h5>
+                       <img height="100px" width="100px" src={dignose}/>
+                   </div>
+                   <div className="d-flex justify-content-center align-items-center">
+                       <h3>{e.totalTestResults}</h3>
+                   </div>
+               </div>
+               <div className=" Deaths div_h d-flex justify-content-center align-item-center flex-column border">
+                   <div className=" d-flex justify-content-center align-items-center flex-row">
+                       <h5>Total Deaths</h5>
+                       <img height="100px" width="100px" src={deaths}/>
+                   </div>
+                   <div className=" d-flex justify-content-center align-items-center">
+                       <h3>{e.death}</h3>
+                   </div>
+               </div>
+               <div className="div_h d-flex Recovered justify-content-center align-item-center flex-column  border">
+                   <div className=" d-flex justify-content-center align-items-center flex-row">
+                       <h5>Recovered</h5>
+                       <img height="100px" width="100px" src={recover}/>
+                   </div>
+                   <div className=" d-flex justify-content-center align-items-center">
+                       <h3>{e.recovered}</h3>
+                   </div>
+               </div>
+               <div className=" div_h Active d-flex justify-content-center align-item-center flex-column  border">
+                   <div className="  d-flex justify-content-center align-items-center flex-row">
+                       <h5>Active cases</h5>
+                       <img height="100px" width="100px" src={active}/>
+                   </div>
+                   <div className=" d-flex justify-content-center align-items-center">
+                       <h3>{e.positive}</h3>
+                   </div>
+               </div>
+               </div>
+               </div>
+               </div>
+               </>
+
                 ))}
-                </tbody>
-            </table></div>
+                </div>
             
             
         </div>

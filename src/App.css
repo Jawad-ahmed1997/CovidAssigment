@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+.div_h{
+  min-height: 180px !important;
+  min-width: 300px !important;
+  border-radius: 18px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Active{
+  background-color: #DDF0F8;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Active h3{
+  background-color: #ddf0f800;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 0px 30px 0px 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Recovered{
+  background-color: #BCE5BA;
 }
-
-.App-link {
-  color: #61dafb;
+.Recovered h3{
+  background-color: #bce5ba4d;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 0px 30px 0px 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Deaths{
+  background-color: #FFB4B1;
+}
+.Deaths h3{
+  background-color: #ffb4b193;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 0px 30px 0px 30px;
+}
+.Conformed{
+  background-color: #ABE9ED;
+}
+.Conformed h3{
+  background-color: #ABE9ED;
+  border: 1px solid black;
+  border-radius: 19px;
+  padding: 0px 30px 0px 30px;
 }
